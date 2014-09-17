@@ -1,0 +1,17 @@
+" OS specific settings before and after general git repo settings
+
+" Disable enhanced syntax highlighting on terminal because solaris does not
+" support 256 color terminals
+if !has("gui_running") 
+	let g:pathogen_disabled=['syntax']
+endif
+
+" Source in vimrc from git repo (general part)
+so $HOME/.vim/vimrc
+
+" The standard git repo setting sets 256 color terminal. Set it to 16 for
+" solaris terminals
+if !has("gui_running") 
+	set t_Co=16
+endif
+

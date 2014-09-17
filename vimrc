@@ -39,20 +39,26 @@ set cursorline cursorcolumn
 " Toggle relative line numbers
 noremap <c-r> :setl rnu!<CR>
 
+" Remap <c-p> to use last mode and dir used
+let g:ctrlp_cmd='CtrlPLastMode --dir'
 " Ignore files in file name completition and for ctrlp
-set wildignore="*.o,*.obj,*.a,*.so.*,,*~,*.swp,*.dll,*.exe"
+set wildignore+=*.o,*.obj,*.a,*.a.CR,*.abb,*.abb.CR,*.elf,*.so.*,*~,*.swp,*.dll,*.exe
+" Follow symbolic links
+let g:ctrlp_follow_symlinks=1
+" Keep cache between sessions (use <F5> to clear cache)
+let g:ctrlp_clear_cache_on_exit=0
 
 set t_Co=256          " Explicitly tell vim that the terminal has 256 colors "
-set nu                " show line numbers
-set showcmd           " show typed command in status bar
-set laststatus=2      " use 2 lines for the status bar
-set matchtime=2       " show matching bracket for 0.2 seconds
-set matchpairs+=<:>   " specially for html
+set nu                " Show line numbers
+set showcmd           " Show typed command in status bar
+set laststatus=2      " Use 2 lines for the status bar
+set matchtime=2       " Show matching bracket for 0.2 seconds
+set matchpairs+=<:>   " Specially for html
 
 " Default Indentation
 set autoindent
-set smartindent     " indent when
-set tabstop=4       " tab width
-set softtabstop=4   " number of spaces to insert for tab
-set shiftwidth=4    " autoindent space width
-set smarttab        " a tab in an indent inserts 'shiftwidth' spaces 
+set smartindent     " Indent when
+set tabstop=4       " Tab width
+set softtabstop=4   " Number of spaces to insert for tab
+set shiftwidth=4    " Autoindent space width
+set smarttab        " A tab in an indent inserts 'shiftwidth' spaces 
