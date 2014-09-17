@@ -42,7 +42,7 @@ noremap <c-r> :setl rnu!<CR>
 " Remap <c-p> to use last mode and dir used
 let g:ctrlp_cmd='CtrlPLastMode --dir'
 " Ignore files in file name completition and for ctrlp
-set wildignore+=*.o,*.obj,*.a,*.a.CR,*.abb,*.abb.CR,*.elf,*.so.*,*~,*.swp,*.dll,*.exe
+set wildignore+=*.o,*.obj,*.a,*.a.CR,*.abb,*.abb.CR,*.elf,*.so.*,*~,*.swp,*.dll,*.dll.*,*.exe,*.exe.*,*.amx,*.mof,*.cat,*.rtf,*.class,*.pdf,*.sav,*.dat,*.xls
 " Follow symbolic links
 let g:ctrlp_follow_symlinks=1
 " Keep cache between sessions (use <F5> to clear cache)

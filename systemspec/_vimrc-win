@@ -1,0 +1,17 @@
+" Windows specific settings before and after general git repo settings
+" Copy this file to ~\_vimrc on Windows
+
+" Here comes some initial coniguration which has to be done prior
+" general configuration (e.g. disable a plugin on this OS)
+
+" There is no such initial configuraiton for Windows
+
+" Source in vimrc from git repo (general part)
+so ~/vimfiles/vimrc
+
+" Here comes the configuration that overrides the general one
+" afterwards
+
+" Change font because default is crap
+set guifont=Consolas
+

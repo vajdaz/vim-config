@@ -1,5 +1,9 @@
-" OS specific settings before and after general git repo settings
+" Solaris specific settings before and after general git repo settings
+" Copy this file to ~/.vimrc on Solaris
 
+" Here comes some initial coniguration which has to be done prior
+" general configuration (e.g. disable a plugin on this OS)
+"
 " Disable enhanced syntax highlighting on terminal because solaris does not
 " support 256 color terminals
 if !has("gui_running") 
@@ -8,6 +12,9 @@ endif
 
 " Source in vimrc from git repo (general part)
 so $HOME/.vim/vimrc
+
+" Here comes the configuration that overrides the general one
+" afterwards
 
 " The standard git repo setting sets 256 color terminal. Set it to 16 for
 " solaris terminals
