@@ -13,11 +13,15 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 let g:NERDTreeDirArrows=0
 let g:NERDTreeShowBookmarks=1
 
-" Show row and column in status bar
-set ruler
+" Hide toolbar
+set guioptions-=T
 
 " Colorscheme
-colorscheme molokai
+set background=dark
+colorscheme solarized
+
+" Show row and column in status bar
+set ruler
 
 " Incremental search
 set incsearch
