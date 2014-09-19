@@ -5,6 +5,11 @@ syntax on
 filetype plugin on
 filetype indent on
 
+" Window size for GUI mode
+if has("gui_running")
+	winsize 120 45
+endif
+
 " NERDTree plugin
 map <C-n> :NERDTreeToggle<CR>
 " Quit if the only buffer is the NERDTree buffer
@@ -12,6 +17,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " On some terminals NERDTree does not work with arrows on
 let g:NERDTreeDirArrows=0
 let g:NERDTreeShowBookmarks=1
+
+" EaseyMotion
+nmap <c-w> <Leader><Leader>w
 
 " Hide toolbar
 set guioptions-=T
