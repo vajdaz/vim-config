@@ -18,6 +18,12 @@ set guioptions-=T
 
 " Colorscheme
 set background=dark
+if has("gui_running") 
+    let g:solarized_termcolors=256
+else
+    let g:solarized_termcolors=16
+endif
+let g:solarized_contrast="high"
 colorscheme solarized
 
 " Show row and column in status bar
@@ -59,6 +65,10 @@ set laststatus=2      " Use 2 lines for the status bar
 set matchtime=2       " Show matching bracket for 0.2 seconds
 set matchpairs+=<:>   " Specially for html
 
+" Scrolling left and right (e.g. for diff)
+nnoremap <m-Left> zH
+nnoremap <m-Right> zL
+
 " Default Indentation
 set autoindent
 set smartindent     " Indent when
@@ -66,3 +76,27 @@ set tabstop=4       " Tab width
 set softtabstop=4   " Number of spaces to insert for tab
 set shiftwidth=4    " Autoindent space width
 set smarttab        " A tab in an indent inserts 'shiftwidth' spaces 
+
+" Shortcut for executing current line as shell command
+nnoremap <Leader>xl :execute "Shell " getline(".")<CR>
+" :Shell for execute shell command and write output into new window
+command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
+function! s:RunShellCommand(cmdline)
+  echo a:cmdline
+  let expanded_cmdline = a:cmdline
+  for part in split(a:cmdline, ' ')
+     if part[0] =~ '\v[%#<]'
+        let expanded_part = fnameescape(expand(part))
+        let expanded_cmdline = substitute(expanded_cmdline, part, expanded_part, '')
+     endif
+  endfor
+  " botright new
+  tabnew
+  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
+  call setline(1, 'You entered:    ' . a:cmdline)
+  call setline(2, 'Expanded Form:  ' .expanded_cmdline)
+  call setline(3,substitute(getline(2),'.','=','g'))
+  execute '$read !'. expanded_cmdline
+  setlocal nomodifiable
+  1
+endfunction
