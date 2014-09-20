@@ -34,6 +34,9 @@ endif
 let g:solarized_contrast="high"
 colorscheme solarized
 
+" Enable modified buffers to be hidden
+set hidden
+
 " Show row and column in status bar
 set ruler
 
