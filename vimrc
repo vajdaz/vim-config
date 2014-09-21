@@ -22,6 +22,9 @@ let g:NERDTreeShowBookmarks=1
 " EaseyMotion
 nmap <c-w> <Leader><Leader>w
 
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+
 " Hide toolbar
 set guioptions-=T
 
