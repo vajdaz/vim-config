@@ -7,7 +7,8 @@ filetype indent on
 
 " Window size for GUI mode
 if has("gui_running")
-	winsize 120 45
+	set lines=45 columns=120
+	" winsize 120 45
 endif
 
 " NERDTree plugin
