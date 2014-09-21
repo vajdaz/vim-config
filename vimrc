@@ -5,6 +5,9 @@ syntax on
 filetype plugin on
 filetype indent on
 
+" User jj for escaping
+inoremap jj <Esc>
+
 " Window size for GUI mode
 if has("gui_running")
 	set lines=45 columns=120
