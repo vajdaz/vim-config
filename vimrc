@@ -28,6 +28,9 @@ nmap <c-w> <Leader><Leader>w
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 
+" Load tags
+set tags=./tags;/
+
 " Hide toolbar
 set guioptions-=T
 
@@ -47,8 +50,9 @@ set hidden
 " Show row and column in status bar
 set ruler
 
-" Incremental search
+" Incremental search and highlight all occurences
 set incsearch
+set hlsearch
 
 " Ignore case when searching if search pattern is lowercase
 set ignorecase smartcase
