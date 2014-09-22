@@ -28,7 +28,8 @@ nmap <c-w> <Leader><Leader>w
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 
-" Load tags
+" Tags and taglist plugin
+nnoremap <silent> <F8> :TlistToggle<CR>
 set tags=./tags;/
 
 " Hide toolbar
