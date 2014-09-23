@@ -27,6 +27,10 @@ nmap <c-w> <Leader><Leader>w
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_left_sep=''
+let g:airline_left_alt_sep=''
+let g:airline_right_sep=''
+let g:airline_right_alt_sep=''
 
 " Tags and taglist plugin
 nnoremap <silent> <F8> :TagbarToggle<CR>
@@ -37,7 +41,7 @@ set guioptions-=T
 
 " Colorscheme
 set background=dark
-if has("gui_running") 
+if has("gui_running")
     let g:solarized_termcolors=256
 else
     let g:solarized_termcolors=16
@@ -98,7 +102,7 @@ set smartindent     " Indent when
 set tabstop=4       " Tab width
 set softtabstop=4   " Number of spaces to insert for tab
 set shiftwidth=4    " Autoindent space width
-set smarttab        " A tab in an indent inserts 'shiftwidth' spaces 
+set smarttab        " A tab in an indent inserts 'shiftwidth' spaces
 
 " Shortcut for executing current line as shell command
 nnoremap <Leader>xl :execute "Shell " getline(".")<CR>
