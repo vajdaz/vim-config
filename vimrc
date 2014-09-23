@@ -29,8 +29,8 @@ nmap <c-w> <Leader><Leader>w
 let g:airline#extensions#tabline#enabled = 1
 
 " Tags and taglist plugin
-nnoremap <silent> <F8> :TlistToggle<CR>
-set tags=./tags;/
+nnoremap <silent> <F8> :TagbarToggle<CR>
+set tags=./tags,tags,/nck/source/SRC/tags
 
 " Hide toolbar
 set guioptions-=T
