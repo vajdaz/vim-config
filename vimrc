@@ -26,11 +26,23 @@ let g:NERDTreeShowBookmarks=1
 nmap <c-w> <Leader><Leader>w
 
 " Airline
+" set encoding=utf-8
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_left_sep=''
-let g:airline_left_alt_sep=''
-let g:airline_right_sep=''
-let g:airline_right_alt_sep=''
+" let g:airline_left_sep=''
+" let g:airline_left_alt_sep=''
+" let g:airline_right_sep=''
+" let g:airline_right_alt_sep=''
+
+" HOWTO install Powerline fonts
+" cd ~
+" wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf
+" mkdir ~/.local/share/fonts/
+" mv sudo fc-cache -f -v
+" PowerlineSymbols.otf ~/.local/share/fonts/
+" wget https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
+" mkdir -p ~/.fonts.conf/
+" mv 10-powerline-symbols.conf ~/.fonts.conf/
+let g:airline_powerline_fonts=1
 
 " Tags and taglist plugin
 nnoremap <silent> <F8> :TagbarToggle<CR>
@@ -46,7 +58,7 @@ if has("gui_running")
 else
     let g:solarized_termcolors=16
 endif
-let g:solarized_contrast="high"
+let g:solarized_menu=0
 colorscheme solarized
 
 " Enable modified buffers to be hidden
