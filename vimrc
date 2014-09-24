@@ -34,11 +34,12 @@ let g:airline#extensions#tabline#enabled = 1
 " let g:airline_right_alt_sep=''
 
 " HOWTO install Powerline fonts
+" see also https://powerline.readthedocs.org/en/latest/installation/linux.html#fontconfig
 " cd ~
 " wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf
 " mkdir ~/.local/share/fonts/
-" mv sudo fc-cache -f -v
-" PowerlineSymbols.otf ~/.local/share/fonts/
+" mv PowerlineSymbols.otf ~/.local/share/fonts/
+" sudo fc-cache -f -v
 " wget https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
 " mkdir -p ~/.fonts.conf/
 " mv 10-powerline-symbols.conf ~/.fonts.conf/
