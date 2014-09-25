@@ -61,6 +61,7 @@ else
 endif
 let g:solarized_menu=0
 colorscheme solarized
+call togglebg#map("<F5>")
 
 " Enable modified buffers to be hidden
 set hidden
