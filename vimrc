@@ -22,8 +22,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 let g:NERDTreeDirArrows=0
 let g:NERDTreeShowBookmarks=1
 
-" EaseyMotion
-nmap <c-w> <Leader><Leader>w
+" EasyMotion
+nmap <c-e> <Leader><Leader>w
 
 " Airline
 " set encoding=utf-8
