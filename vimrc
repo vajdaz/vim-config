@@ -26,7 +26,6 @@ let g:NERDTreeShowBookmarks=1
 nmap <c-e> <Leader><Leader>w
 
 " Airline
-" set encoding=utf-8
 let g:airline#extensions#tabline#enabled = 1
 " let g:airline_left_sep=''
 " let g:airline_left_alt_sep=''
@@ -98,6 +97,10 @@ set wildignore+=*.o,*.obj,*.a,*.a.CR,*.abb,*.abb.CR,*.elf,*.so.*,*~,*.swp,*.dll,
 let g:ctrlp_follow_symlinks=1
 " Keep cache between sessions (use <F5> to clear cache)
 let g:ctrlp_clear_cache_on_exit=0
+" Deleting buffers by selecting them
+let g:ctrlp_open_func={
+			\'buffers' : 'VZCloseBuffer'
+			\}
 
 set t_Co=256          " Explicitly tell vim that the terminal has 256 colors "
 set nu                " Show line numbers
@@ -110,6 +113,10 @@ set matchpairs+=<:>   " Specially for html
 nnoremap <m-Left> zH
 nnoremap <m-Right> zL
 
+" Stepping through tabs
+nnoremap <c-s-Right> :tabnext<CR>
+nnoremap <c-s-Left> :tabprevious<CR>
+
 " Default Indentation
 set autoindent
 set smartindent     " Indent when
@@ -117,6 +124,16 @@ set tabstop=4       " Tab width
 set softtabstop=4   " Number of spaces to insert for tab
 set shiftwidth=4    " Autoindent space width
 set smarttab        " A tab in an indent inserts 'shiftwidth' spaces
+
+nnoremap <Leader><Leader>d :ToggleDiff<CR>
+command! -complete=shellcmd ToggleDiff call s:RunToggleDiff()
+function! s:RunToggleDiff()
+	if &diff
+		diffoff!
+	else
+		windo diffthis
+	endif
+endfunction
 
 " Shortcut for executing current line as shell command
 nnoremap <Leader>xl :execute "Shell " getline(".")<CR>
@@ -140,4 +157,10 @@ function! s:RunShellCommand(cmdline)
   execute '$read !'. expanded_cmdline
   setlocal nomodifiable
   1
+endfunction
+
+function VZCloseBuffer(action, line)
+	if a:action =~ 'h'
+		echo a:line
+	endif
 endfunction
