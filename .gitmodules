@@ -50,3 +50,7 @@
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
 	ignore = dirty
+[submodule "bundle/linediff.vim"]
+	path = bundle/linediff.vim
+	url = https://github.com/AndrewRadev/linediff.vim.git
+	ignore = dirty

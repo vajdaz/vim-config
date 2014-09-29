@@ -125,6 +125,7 @@ set softtabstop=4   " Number of spaces to insert for tab
 set shiftwidth=4    " Autoindent space width
 set smarttab        " A tab in an indent inserts 'shiftwidth' spaces
 
+" Toggle diff mode for all windows on current tab
 nnoremap <Leader><Leader>d :ToggleDiff<CR>
 command! -complete=shellcmd ToggleDiff call s:RunToggleDiff()
 function! s:RunToggleDiff()
@@ -135,9 +136,8 @@ function! s:RunToggleDiff()
 	endif
 endfunction
 
-" Shortcut for executing current line as shell command
+" :Shell for execute shell command and write output into new tab
 nnoremap <Leader>xl :execute "Shell " getline(".")<CR>
-" :Shell for execute shell command and write output into new window
 command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
 function! s:RunShellCommand(cmdline)
   echo a:cmdline
@@ -159,8 +159,22 @@ function! s:RunShellCommand(cmdline)
   1
 endfunction
 
+" Deleting buffers in CtrlP by pressing <c-x>
+let g:ctrlp_open_func={
+			\'buffers' : 'VZCloseBuffer'
+			\}
 function VZCloseBuffer(action, line)
 	if a:action =~ 'h'
-		echo a:line
+		let bdCommand = "bd"
+		let bufferName = a:line
+		if a:line =~ '^['
+			let bufferName = substitute(bufferName, '.*[', '', '')
+			let bufferName = substitute(bufferName, '\*.*', '', '')
+			let bdCommand = "bd!"
+		endif
+		exec bdCommand . " " . bufferName
+		" Found no better way to update the list
+		call ctrlp#exit()
+		exec ctrlp#init(1)
 	endif
 endfunction
