@@ -54,3 +54,7 @@
 	path = bundle/linediff.vim
 	url = https://github.com/AndrewRadev/linediff.vim.git
 	ignore = dirty
+[submodule "bundle/clam.vim"]
+	path = bundle/clam.vim
+	url = https://github.com/sjl/clam.vim.git
+	ignore = dirty
