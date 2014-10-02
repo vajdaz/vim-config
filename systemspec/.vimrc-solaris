@@ -10,6 +10,7 @@ if !has("gui_running")
 	let g:pathogen_disabled=['syntax']
 endif
 
+let g:tagbar_ctags_bin = "/home/star2/vobadmer/local_" . $OSSUBDIR . "/bin/ctags"
 " Source in vimrc from git repo (general part)
 so $HOME/.vim/vimrc
 
