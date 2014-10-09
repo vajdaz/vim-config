@@ -75,6 +75,7 @@ set laststatus=2      " Use 2 lines for the status bar
 set matchtime=2       " Show matching bracket for 0.2 seconds
 set matchpairs+=<:>   " Specially for html
 set expandtab         " Do not use tab by default (I override this for text files in my ftplugin/text.vim
+set mouse=a           " Enable mouse in terminal window
 
 " Easier navigation between split windows
 nnoremap <c-j> <c-w>j
