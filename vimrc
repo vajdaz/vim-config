@@ -112,6 +112,9 @@ nnoremap <m-Right> zL
 nnoremap <c-s-Right> :tabnext<CR>
 nnoremap <c-s-Left> :tabprevious<CR>
 
+" Open file under cursor in new vertical split
+noremap <F4> :vertical wincmd f<CR>
+
 " Default Indentation
 set autoindent
 set smartindent     " Indent when
