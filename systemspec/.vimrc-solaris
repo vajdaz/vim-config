@@ -10,6 +10,7 @@ if !has("gui_running")
 	let g:pathogen_disabled=['syntax']
 endif
 
+let g:tagbar_ctags_bin = "/home/star2/vobadmer/local_" . $OSSUBDIR . "/bin/ctags"
 " Source in vimrc from git repo (general part)
 so $HOME/.vim/vimrc
 
@@ -22,3 +23,9 @@ if !has("gui_running")
 	set t_Co=16
 endif
 
+" Override powerline font stuff on windows
+let g:airline_left_sep=''
+let g:airline_left_alt_sep=''
+let g:airline_right_sep=''
+let g:airline_right_alt_sep=''
+let g:airline_powerline_fonts=0
