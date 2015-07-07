@@ -61,3 +61,6 @@
 	path = bundle/clam.vim
 	url = https://github.com/sjl/clam.vim.git
 	ignore = dirty
+[submodule "bundle/undotree"]
+	path = bundle/undotree
+	url = https://github.com/mbbill/undotree.git
