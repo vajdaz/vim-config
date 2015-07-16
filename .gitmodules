@@ -66,3 +66,7 @@
 	path = bundle/undotree
 	url = https://github.com/mbbill/undotree.git
 	ignore = dirty
+[submodule "bundle/vim-dispatch"]
+	path = bundle/vim-dispatch
+	url = http://github.com/tpope/vim-dispatch.git
+	ignore = dirty
