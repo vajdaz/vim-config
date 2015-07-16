@@ -53,6 +53,7 @@
 [submodule "bundle/vim-scala"]
 	path = bundle/vim-scala
 	url = https://github.com/derekwyatt/vim-scala.git
+	ignore = dirty
 [submodule "bundle/linediff.vim"]
 	path = bundle/linediff.vim
 	url = https://github.com/AndrewRadev/linediff.vim.git
@@ -64,3 +65,4 @@
 [submodule "bundle/undotree"]
 	path = bundle/undotree
 	url = https://github.com/mbbill/undotree.git
+	ignore = dirty
