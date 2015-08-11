@@ -6,11 +6,14 @@
 "
 " Disable enhanced syntax highlighting on terminal because solaris does not
 " support 256 color terminals
-if !has("gui_running") 
+if !has("gui_running")
 	let g:pathogen_disabled=['syntax']
 endif
 
-let g:tagbar_ctags_bin = "/home/star2/vobadmer/local_" . $OSSUBDIR . "/bin/ctags"
+if $OSSUBDIR != "linux"
+  let g:tagbar_ctags_bin = "/home/elster4/vobadmer/local_" . $OSSUBDIR . "/bin/ctags"
+endif
+
 " Source in vimrc from git repo (general part)
 so $HOME/.vim/vimrc
 
@@ -19,8 +22,12 @@ so $HOME/.vim/vimrc
 
 " The standard git repo setting sets 256 color terminal. Set it to 16 for
 " solaris terminals
-if !has("gui_running") 
+if !has("gui_running")
 	set t_Co=16
+else
+        if $OSSUBDIR == "linux"
+                set guifont=Terminus\ 10
+        endif
 endif
 
 " Override powerline font stuff on windows
