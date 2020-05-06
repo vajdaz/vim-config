@@ -30,10 +30,6 @@
 	path = bundle/syntax
 	url = https://github.com/octol/vim-cpp-enhanced-highlight.git
 	ignore = dirty
-[submodule "bundle/vim-colors-solarized"]
-	path = bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
-	ignore = dirty
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git

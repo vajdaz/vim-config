@@ -48,19 +48,11 @@ let g:airline_powerline_fonts=1
 nnoremap <silent> <F8> :TagbarToggle<CR>
 set tags=./tags,tags,/nck/source/SRC/tags
 
+" Colorscheme
+colorscheme PaperColor
+
 " Hide toolbar
 set guioptions-=T
-
-" Colorscheme
-set background=dark
-if has("gui_running")
-    let g:solarized_termcolors=256
-else
-    let g:solarized_termcolors=16
-endif
-let g:solarized_menu=0
-colorscheme solarized
-call togglebg#map("<F5>")
 
 set hidden            " Enable modified buffers to be hidden
 set ruler             " Show row and column in status bar
