@@ -69,6 +69,9 @@ set matchpairs+=<:>   " Specially for html
 set expandtab         " Do not use tab by default (I override this for text files in my ftplugin/text.vim
 set mouse=a           " Enable mouse in terminal window
 
+" ClearCase
+let g:ccaseNoComment=1
+
 " Easier navigation between split windows
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
@@ -79,6 +82,10 @@ nnoremap <c-l> <c-w>l
 au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
 set cursorline cursorcolumn
+
+" Show version tree of path under cursor
+nnoremap <c-s-x> :call system('cleartool lsvtree -graph  '. expand('<cWORD>') )<CR>
+" nnoremap <c-s-x> :sp <cWORD>/Imakefile<CR>
 
 " Toggle relative line numbers
 noremap <c-r> :setl rnu!<CR>
@@ -110,9 +117,9 @@ noremap <F4> :vertical wincmd f<CR>
 " Default Indentation
 set autoindent
 set smartindent     " Indent when
-set tabstop=4       " Tab width
-set softtabstop=4   " Number of spaces to insert for tab
-set shiftwidth=4    " Autoindent space width
+set tabstop=8       " Tab width
+set softtabstop=8   " Number of spaces to insert for tab
+set shiftwidth=8    " Autoindent space width
 set smarttab        " A tab in an indent inserts 'shiftwidth' spaces
 
 " Toggle diff mode for all windows on current tab
@@ -125,6 +132,13 @@ function! s:RunToggleDiff()
         windo diffthis
     endif
 endfunction
+
+" Rechtschreibung
+au BufNewFile,BufRead,BufEnter   *.wiki    setlocal spell    spelllang=de_de
+au BufNewFile,BufRead,BufEnter   *.md      setlocal encoding=utf-8
+au BufNewFile,BufRead,BufEnter   *.md      setlocal spell    spelllang=de_de
+au BufNewFile,BufRead,BufEnter   *.txt     setlocal spell    spelllang=de_de
+au BufNewFile,BufRead,BufEnter   README    setlocal spell    spelllang=en_us
 
 " :Shell for execute shell command and write output into new tab
 nnoremap <Leader>xl :execute "Shell " getline(".")<CR>
