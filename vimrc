@@ -124,7 +124,7 @@ set smarttab        " A tab in an indent inserts 'shiftwidth' spaces
 
 " Toggle diff mode for all windows on current tab
 nnoremap <Leader><Leader>d :ToggleDiff<CR>
-command! -complete=shellcmd ToggleDiff call s:RunToggleDiff()
+command! ToggleDiff call s:RunToggleDiff()
 function! s:RunToggleDiff()
     if &diff
         diffoff!
@@ -142,7 +142,7 @@ au BufNewFile,BufRead,BufEnter   README    setlocal spell    spelllang=en_us
 
 " :Shell for execute shell command and write output into new tab
 nnoremap <Leader>xl :execute "Shell " getline(".")<CR>
-command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
+command! -nargs=+ Shell call s:RunShellCommand(<q-args>)
 function! s:RunShellCommand(cmdline)
     echo a:cmdline
     let expanded_cmdline = a:cmdline
